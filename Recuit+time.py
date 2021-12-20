@@ -2,7 +2,7 @@ from random import randint, random
 from math import exp
 import time
 
-with open("data7.dat", "r") as f:
+with open("data10.dat", "r") as f:
 # Lecture du fichier
     x = []
     N = int(f.readline())
@@ -227,7 +227,7 @@ def voisinageDivision2(vec, iter, end,x_list,E,T):
     return bestvrai, bestvraiListDesValeurs, bestprixVrai,bestPart
 
 print("#################################")
-vec,valeurs,prix,Part = voisinageDivision2(diviseur2,N*2,5,x_list,E,T)
+vec,valeurs,prix,Part = voisinageDivision2(diviseur2,N*2,120,x_list,E,T)
 print("diviseur", vec)
 print(sum(vec))
 print("valeurs", valeurs)
@@ -237,7 +237,7 @@ print("prix",prix)
 #    print(P.List, "     ", sum(P.List))
 
 #Ecriture du fichier de sortie
-with open("testData22.txt", 'w', encoding='utf-8') as f:
+with open("testData10.txt", 'w', encoding='utf-8') as f:
 
     for i in range(len(x_list)):
 
@@ -247,7 +247,7 @@ with open("testData22.txt", 'w', encoding='utf-8') as f:
         f.write("\n")
     it=0
     for i in range(len(valeurs)):
-            if(i%10==0):
+            if(i%E==0):
                 it+=1
                 f.write("B"+str(it)+" "+str(valeurs[i])+"\n")
     f.write("COST"+" "+str(prix))
